@@ -8,7 +8,6 @@ class ApplicationConfig {
   Future<void> configureApp() async {
     WidgetsFlutterBinding.ensureInitialized();
     await _firebaseCoreConfig();
-    // await _loadEnvs();
   }
 
   Future<void> _firebaseCoreConfig() async {
@@ -16,6 +15,4 @@ class ApplicationConfig {
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }
-
-  // Future<void> _loadEnvs() => Environments.loadEnvs();
 }
