@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app/core/helpers/route_not_found.dart';
 import 'app/core/ui/ui_config.dart';
 import 'app/pages/auth/login/login_page.dart';
+import 'app/pages/auth/register/register_page.dart';
 import 'app/pages/auth/splash/splash_screen.dart';
 
 void main() async {
@@ -32,20 +32,24 @@ class _MyAppState extends State<MyApp> {
           title: UiConfig.title,
           debugShowCheckedModeBanner: false,
           theme: UiConfig.theme,
-          home: const SplashScreen(),
-          initialRoute: '/',
+          // home: const LoginPage(),
+          initialRoute: '/auth/login',
           unknownRoute: GetPage(
             name: '/404',
             page: () => const RouteNotFound(),
           ),
           getPages: [
-            GetPage(
-              name: '/',
-              page: () => const SplashScreen(),
-            ),
+            // GetPage(
+            //   name: '/',
+            //   page: () => const SplashScreen(),
+            // ),
             GetPage(
               name: '/auth/login',
               page: () => const LoginPage(),
+            ),
+            GetPage(
+              name: '/auth/register',
+              page: () => const RegisterPage(),
             ),
           ],
         );
