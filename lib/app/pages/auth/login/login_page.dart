@@ -102,7 +102,9 @@ class LoginPage extends StatelessWidget {
                       width: double.infinity,
                       height: 60,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed('/dashboard/home');
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: context.primaryColor,
                           shape: RoundedRectangleBorder(
