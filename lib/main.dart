@@ -6,7 +6,8 @@ import 'app/core/helpers/route_not_found.dart';
 import 'app/core/ui/ui_config.dart';
 import 'app/pages/auth/login/login_page.dart';
 import 'app/pages/auth/register/register_page.dart';
-import 'app/pages/auth/splash/splash_screen.dart';
+import 'app/pages/dashboard/home.dart';
+// import 'app/pages/auth/splash/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,10 @@ class _MyAppState extends State<MyApp> {
             GetPage(
               name: '/auth/register',
               page: () => const RegisterPage(),
+            ),
+            GetPage(
+              name: '/dashboard/home',
+              page: () => const Home(),
             ),
           ],
         );
