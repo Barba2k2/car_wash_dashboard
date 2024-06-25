@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/main_content/main_content.dart';
 import 'widgets/nav_bar.dart';
 
 class Home extends StatelessWidget {
@@ -19,26 +20,14 @@ class Home extends StatelessWidget {
               drawer: const Drawer(
                 child: NavBar(),
               ),
-              body: Container(
-                width: double.infinity,
-                color: const Color(0xFFF2F2F9),
-                child: const Center(
-                  child: Text('Main Content Area'),
-                ),
-              ),
+              body: const MainContent(),
             );
           } else {
-            return Row(
+            return const Row(
               children: [
-                const NavBar(),
+                NavBar(),
                 Expanded(
-                  child: Container(
-                    width: double.infinity,
-                    color: const Color(0xFFF2F2F9),
-                    child: const Center(
-                      child: Text('Main Content Area'),
-                    ),
-                  ),
+                  child: MainContent(),
                 ),
               ],
             );
