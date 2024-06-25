@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,13 +48,32 @@ class NavBar extends StatelessWidget {
               size: 34,
               color: Color(0XFF555555),
             ),
-            title: Text(
-              'Novos Agendamentos',
-              style: GoogleFonts.poppins(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: const Color(0XFF555555),
-              ),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Novos Agendamentos',
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0XFF555555),
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 10,
+                  backgroundColor: Colors.red,
+                  child: Center(
+                    child: Text(
+                      '2',
+                      style: GoogleFonts.poppins(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             onTap: () {},
           ),
@@ -132,9 +152,11 @@ class NavBar extends StatelessWidget {
               Row(
                 children: [
                   CircleAvatar(
-                    radius: 40,
+                    radius: 30,
                     backgroundColor: Colors.white.withOpacity(0.75),
-                    child: Image.asset('assets/images/homer.png'),
+                    backgroundImage: const AssetImage(
+                      'assets/images/homer.png',
+                    ),
                   ),
                   const SizedBox(
                     width: 20,
@@ -162,19 +184,25 @@ class NavBar extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 10,
+              ),
               Divider(
                 color: Colors.black.withOpacity(0.75),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               ListTile(
                 leading: const Icon(
-                  Icons.logout,
+                  CupertinoIcons.square_arrow_left,
                   size: 34,
                   color: Color(0XFF333333),
                 ),
                 title: Text(
                   'Sair',
                   style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: const Color(0XFF555555),
                   ),
