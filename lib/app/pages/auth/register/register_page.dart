@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/extension/size_screen_extension.dart';
@@ -145,6 +146,7 @@ class RegisterPage extends StatelessWidget {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   log('Apertei no cadastre-se');
+                                  Get.toNamed('/auth/login');
                                 },
                             ),
                           ],
