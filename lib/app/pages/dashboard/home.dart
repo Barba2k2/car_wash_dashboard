@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 import 'widgets/main_content/main_content.dart';
 import 'widgets/nav_bar.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final ValueNotifier<int> _selectedIndexNotifier = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +24,20 @@ class Home extends StatelessWidget {
               appBar: AppBar(
                 backgroundColor: Colors.white,
               ),
-              drawer: const Drawer(
-                child: NavBar(),
+              drawer: Drawer(
+                child: NavBar(
+                  selectedIndexNotifier: _selectedIndexNotifier,
+                ),
               ),
               body: const MainContent(),
             );
           } else {
-            return const Row(
+            return Row(
               children: [
-                NavBar(),
-                Expanded(
+                NavBar(
+                  selectedIndexNotifier: _selectedIndexNotifier,
+                ),
+                const Expanded(
                   child: MainContent(),
                 ),
               ],
